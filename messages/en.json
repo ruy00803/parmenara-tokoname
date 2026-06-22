@@ -1,0 +1,102 @@
+{
+  "nav": {
+    "home": "Home",
+    "menu": "Menu",
+    "store": "Location",
+    "instagram": "Instagram"
+  },
+  "hero": {
+    "eyebrow": "Aeon Mall Tokoname",
+    "title": "Fresh Pasta &\nPizza Restaurant",
+    "subtitle": "Chewy handmade pasta, crispy-yet-fluffy pizza on our original blend dough.\nMade with Italian ripened tomatoes.",
+    "cta": "View Menu"
+  },
+  "featured": {
+    "eyebrow": "Popular",
+    "title": "Popular Items",
+    "subtitle": "Our most-loved signature dishes, chosen by our guests.",
+    "viewAll": "View Full Menu →"
+  },
+  "concept": {
+    "eyebrow": "Our Story",
+    "title": "Our Commitment",
+    "body": "Our fresh pasta is made in-house daily for a wonderfully chewy texture. The pizza dough is our proprietary blend — crispy on the outside, fluffy inside. We use premium Italian ripened tomatoes to bring out the best flavors."
+  },
+  "fritta": {
+    "eyebrow": "Fritta",
+    "title": "New Experience! Fried Pizza Fritta",
+    "body": "A brand-new crispy fried pizza experience. Great for takeout and eating on the go. Four flavors: Ume Chicken, Teriyaki Egg, Potato Mentaiko & Apple (new!).",
+    "cta": "See Fritta Menu"
+  },
+  "instagram": {
+    "eyebrow": "SNS",
+    "title": "Instagram",
+    "subtitle": "Follow us for the latest news and food photos",
+    "follow": "Follow"
+  },
+  "store": {
+    "eyebrow": "Store",
+    "title": "Store Information",
+    "address": "Address",
+    "addressVal": "2-20-3 Rinku-cho, Tokoname, Aichi 479-0822\nAeon Mall Tokoname",
+    "hours": "Hours",
+    "hoursVal": "11:00 AM – 9:00 PM",
+    "holiday": "Closed",
+    "holidayVal": "Irregular (follows Aeon Mall schedule)",
+    "access": "Access",
+    "accessVal": "Approx. 10 min walk from Chubu Centrair Airport Sta.",
+    "mapCta": "Open in Google Maps",
+    "mapPlaceholder": "Set Google Maps Embed API key to display map"
+  },
+  "qr": {
+    "eyebrow": "QR Code",
+    "title": "Multilingual Menu QR Codes",
+    "subtitle": "Scan to access the menu in your language.",
+    "note": "※Place QR images in /public/qr/ folder"
+  },
+  "menu": {
+    "title": "Menu",
+    "subtitle": "Fresh Pasta · Pizza · Fritta",
+    "note": "All prices include tax. Photos are for reference only.",
+    "takeoutNote": "Takeout orders include a container fee of ¥40 (tax incl.). Only items marked TAKE OUT OK are available for takeout.",
+    "categories": {
+      "all": "All",
+      "pasta": "Pasta",
+      "pizza": "Pizza",
+      "fritta": "Fritta",
+      "set": "Sets",
+      "drink": "Drinks"
+    },
+    "noodle": "Noodle Options",
+    "noodleExtra": "Extra noodles free / Double noodles +¥150 (tax incl.)",
+    "topping": "Toppings",
+    "toppingNote": "Can be added to pasta & pizza",
+    "eatIn": "Eat-in",
+    "takeout": "Takeout",
+    "frittaSet": "Fritta Bundle Sets (Takeout only)",
+    "pieceSet": "-piece set",
+    "frittaPackaging": "※Takeout packaging fee: ¥10 per item.",
+    "noItems": "No items in this category.",
+    "taxIncl": "tax incl.",
+    "takeoutPrice": "Takeout"
+  },
+  "card": {
+    "takeoutOk": "TAKE OUT OK",
+    "taxIncl": "(tax incl.)",
+    "eatIn": "Eat-in",
+    "toPrice": "Takeout"
+  },
+  "footer": {
+    "storeName": "Aeon Mall Tokoname",
+    "storeInfo": "Store Info",
+    "hours": "11:00 AM – 9:00 PM",
+    "holiday": "Irregular holidays (follows Aeon Mall)",
+    "copyright": "© {year} Parmenara Aeon Mall Tokoname. All rights reserved."
+  },
+  "meta": {
+    "siteTitle": "Parmenara Aeon Mall Tokoname",
+    "siteDescription": "Browse the full menu of Parmenara Aeon Mall Tokoname — fresh pasta, pizza, fritta and more.",
+    "menuTitle": "Menu | Parmenara Aeon Mall Tokoname",
+    "menuDescription": "Browse the full menu of Parmenara Aeon Mall Tokoname — fresh pasta, pizza, fritta and more."
+  }
+}

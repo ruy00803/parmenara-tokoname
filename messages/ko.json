@@ -1,0 +1,102 @@
+{
+  "nav": {
+    "home": "홈",
+    "menu": "메뉴",
+    "store": "매장 정보",
+    "instagram": "Instagram"
+  },
+  "hero": {
+    "eyebrow": "이온몰 도코나메점",
+    "title": "수제 생파스타와\n피자 전문점",
+    "subtitle": "쫄깃한 수제 생파스타, 독자 블렌드 도우의 피자.\n이탈리아산 완숙 토마토로 만든 한 접시를 즐겨보세요.",
+    "cta": "메뉴 보기"
+  },
+  "featured": {
+    "eyebrow": "Popular",
+    "title": "인기 메뉴",
+    "subtitle": "고객님께 꾸준히 사랑받는 대표 메뉴를 소개합니다.",
+    "viewAll": "전체 메뉴 보기 →"
+  },
+  "concept": {
+    "eyebrow": "Our Story",
+    "title": "파르메나라의 고집",
+    "body": "매일 담아내는 수제 생파스타는 쫄깃한 식감이 자랑입니다. 피자는 독자 블렌드 도우로 겉은 바삭, 속은 폭신하게 구워냅니다. 이탈리아산 완숙 토마토를 듬뿍 사용한 소스로 재료의 맛을 최대한 끌어냈습니다."
+  },
+  "fritta": {
+    "eyebrow": "Fritta",
+    "title": "새로운 식감! 튀김 피자 프리타",
+    "body": "바삭하게 튀긴 새로운 식감의 피자 프리타. 포장 및 길거리 취식도 가능합니다. 매실 닭가슴살·데리타마·감자 명란·애플(신메뉴) 4종류.",
+    "cta": "프리타 메뉴 보기"
+  },
+  "instagram": {
+    "eyebrow": "SNS",
+    "title": "Instagram",
+    "subtitle": "최신 소식과 푸드 사진은 인스타그램에서 확인",
+    "follow": "팔로우하기"
+  },
+  "store": {
+    "eyebrow": "Store",
+    "title": "매장 정보",
+    "address": "주소",
+    "addressVal": "〒479-0822 아이치현 도코나메시 린쿠초 2-20-3\n이온몰 도코나메",
+    "hours": "영업시간",
+    "hoursVal": "11:00 〜 21:00",
+    "holiday": "정기 휴무",
+    "holidayVal": "부정기 휴무（이온몰 기준）",
+    "access": "오시는 길",
+    "accessVal": "주부국제공항역에서 도보 약 10분",
+    "mapCta": "Google Map으로 보기",
+    "mapPlaceholder": "지도를 표시하려면 Google Maps Embed API 키를 설정하세요"
+  },
+  "qr": {
+    "eyebrow": "QR Code",
+    "title": "다국어 메뉴 QR코드",
+    "subtitle": "각 언어의 메뉴 페이지로 바로 접속할 수 있습니다.",
+    "note": "※QR 이미지는 /public/qr/ 폴더에 배치해 주세요"
+  },
+  "menu": {
+    "title": "메뉴",
+    "subtitle": "수제 생파스타 · 피자 · 프리타",
+    "note": "표시 가격은 모두 세금 포함입니다. 사진은 이미지입니다.",
+    "takeoutNote": "테이크아웃의 경우 용기 대금 ¥40(세금 포함)이 별도로 부과됩니다. TAKE OUT OK 표시 상품만 포장 가능합니다.",
+    "categories": {
+      "all": "전체",
+      "pasta": "파스타",
+      "pizza": "피자",
+      "fritta": "프리타",
+      "set": "세트",
+      "drink": "음료"
+    },
+    "noodle": "면 옵션",
+    "noodleExtra": "면 조금 더 무료 / 면 2배 +¥150(세금 포함)",
+    "topping": "토핑",
+    "toppingNote": "파스타·피자에 추가 가능",
+    "eatIn": "매장",
+    "takeout": "테이크아웃",
+    "frittaSet": "프리타 묶음 세트（테이크아웃 전용）",
+    "pieceSet": "개 세트",
+    "frittaPackaging": "※테이크아웃 포장비: 1개당 ¥10.",
+    "noItems": "이 카테고리에 상품이 없습니다.",
+    "taxIncl": "세금포함",
+    "takeoutPrice": "테이크아웃"
+  },
+  "card": {
+    "takeoutOk": "TAKE OUT OK",
+    "taxIncl": "（세금포함）",
+    "eatIn": "매장",
+    "toPrice": "테이크아웃"
+  },
+  "footer": {
+    "storeName": "이온몰 도코나메점",
+    "storeInfo": "매장 정보",
+    "hours": "11:00〜21:00",
+    "holiday": "부정기 휴무（이온몰 기준）",
+    "copyright": "© {year} Parmenara Aeon Mall Tokoname. All rights reserved."
+  },
+  "meta": {
+    "siteTitle": "파르메나라 이온몰 도코나메점",
+    "siteDescription": "파르메나라 이온몰 도코나메점의 전체 메뉴를 확인하세요.",
+    "menuTitle": "메뉴 | 파르메나라 이온몰 도코나메점",
+    "menuDescription": "파르메나라 이온몰 도코나메점의 전체 메뉴를 확인하세요."
+  }
+}

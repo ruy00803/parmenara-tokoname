@@ -1,0 +1,102 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "menu": "メニュー",
+    "store": "店舗情報",
+    "instagram": "Instagram"
+  },
+  "hero": {
+    "eyebrow": "イオンモール常滑店",
+    "title": "自家製生パスタと\nピッツァの店",
+    "subtitle": "もちもちの生パスタ、石窯仕込みの自家製ブレンド生地ピッツァ。\nイタリア産完熟トマトを使った一皿をどうぞ。",
+    "cta": "メニューを見る"
+  },
+  "featured": {
+    "eyebrow": "Popular",
+    "title": "人気メニュー",
+    "subtitle": "お客様に選ばれ続ける定番・看板メニューをご紹介します。",
+    "viewAll": "全メニューを見る →"
+  },
+  "concept": {
+    "eyebrow": "Our Story",
+    "title": "パルメナーラのこだわり",
+    "body": "毎日仕込む自家製生パスタは、もちもちとした食感が自慢。ピッツァは独自のブレンド生地で、外はカリッ、中はふわっと焼き上げています。イタリア産完熟トマトを贅沢に使ったソースは、素材の旨味を最大限に引き出しています。"
+  },
+  "fritta": {
+    "eyebrow": "Fritta",
+    "title": "新感覚！揚げピッツァフリッタ",
+    "body": "カリッと揚がった新食感のピッツァフリッタ。お持ち帰り・食べ歩きもできます。梅ササミ・照りたま・じゃが明太・アップル（新登場）の4種類。",
+    "cta": "フリッタを見る"
+  },
+  "instagram": {
+    "eyebrow": "SNS",
+    "title": "Instagram",
+    "subtitle": "最新情報・フードフォトはInstagramでチェック",
+    "follow": "フォローする"
+  },
+  "store": {
+    "eyebrow": "Store",
+    "title": "店舗情報",
+    "address": "住所",
+    "addressVal": "〒479-0822 愛知県常滑市りんくう町2-20-3\nイオンモール常滑",
+    "hours": "営業時間",
+    "hoursVal": "11:00 〜 21:00",
+    "holiday": "定休日",
+    "holidayVal": "不定休（イオンモールに準ずる）",
+    "access": "アクセス",
+    "accessVal": "中部国際空港駅より徒歩約10分",
+    "mapCta": "Google Mapで見る",
+    "mapPlaceholder": "地図を表示するにはGoogle Maps Embed APIキーを設定してください"
+  },
+  "qr": {
+    "eyebrow": "QR Code",
+    "title": "多言語メニューQRコード",
+    "subtitle": "各言語のメニューページへ直接アクセスできます。",
+    "note": "※QR画像は /public/qr/ フォルダに配置してください"
+  },
+  "menu": {
+    "title": "メニュー",
+    "subtitle": "自家製生パスタ・ピッツァ・フリッタ",
+    "note": "表示価格はすべて税込です。写真はイメージです。",
+    "takeoutNote": "テイクアウトの場合、容器代¥40（税込）が別途かかります。TAKE OUT OKマークの商品のみお持ち帰り可能です。",
+    "categories": {
+      "all": "すべて",
+      "pasta": "パスタ",
+      "pizza": "ピッツァ",
+      "fritta": "フリッタ",
+      "set": "セット",
+      "drink": "ドリンク"
+    },
+    "noodle": "麺オプション",
+    "noodleExtra": "麺やや多め 無料 ／ 麺2倍 +¥150（税込）",
+    "topping": "トッピング",
+    "toppingNote": "パスタ・ピッツァに追加できます",
+    "eatIn": "イートイン",
+    "takeout": "テイクアウト",
+    "frittaSet": "フリッタまとめ買いセット（テイクアウト専用）",
+    "pieceSet": "個セット",
+    "frittaPackaging": "※お持ち帰りは包装代として1品あたり¥10いただきます。",
+    "noItems": "このカテゴリの商品はありません。",
+    "taxIncl": "税込",
+    "takeoutPrice": "テイクアウト"
+  },
+  "card": {
+    "takeoutOk": "TAKE OUT OK",
+    "taxIncl": "（税込）",
+    "eatIn": "税込",
+    "toPrice": "テイクアウト"
+  },
+  "footer": {
+    "storeName": "イオンモール常滑店",
+    "storeInfo": "店舗情報",
+    "hours": "11:00〜21:00",
+    "holiday": "不定休（イオンモールに準ずる）",
+    "copyright": "© {year} Parmenara Aeon Mall Tokoname. All rights reserved."
+  },
+  "meta": {
+    "siteTitle": "パルメナーラ イオンモール常滑店",
+    "siteDescription": "自家製生パスタ・ピッツァ・フリッタなど、パルメナーラ イオンモール常滑店の全メニューをご覧いただけます。",
+    "menuTitle": "メニュー | パルメナーラ イオンモール常滑店",
+    "menuDescription": "自家製生パスタ・ピッツァ・フリッタなど、パルメナーラ イオンモール常滑店の全メニューをご覧いただけます。"
+  }
+}

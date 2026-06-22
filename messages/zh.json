@@ -1,0 +1,102 @@
+{
+  "nav": {
+    "home": "首页",
+    "menu": "菜单",
+    "store": "店铺信息",
+    "instagram": "Instagram"
+  },
+  "hero": {
+    "eyebrow": "永旺购物中心常滑店",
+    "title": "自制生意面与\n披萨专门店",
+    "subtitle": "劲道手工生意面、外酥里嫩的自制混合面团披萨。\n使用意大利熟番茄精心制作。",
+    "cta": "查看菜单"
+  },
+  "featured": {
+    "eyebrow": "Popular",
+    "title": "人气菜单",
+    "subtitle": "深受顾客喜爱的招牌菜品介绍。",
+    "viewAll": "查看全部菜单 →"
+  },
+  "concept": {
+    "eyebrow": "Our Story",
+    "title": "帕尔梅纳拉的坚持",
+    "body": "每日现制的手工生意面，口感劲道是我们的骄傲。披萨采用独家混合面团，外酥里嫩。使用大量意大利熟番茄制成的酱汁，将食材的鲜味发挥到极致。"
+  },
+  "fritta": {
+    "eyebrow": "Fritta",
+    "title": "全新体验！油炸披萨",
+    "body": "酥脆油炸披萨带来全新口感体验。可外带、边走边吃。梅子鸡胸肉、照烧鸡蛋、土豆明太子、苹果（新品）共4种。",
+    "cta": "查看油炸披萨菜单"
+  },
+  "instagram": {
+    "eyebrow": "SNS",
+    "title": "Instagram",
+    "subtitle": "最新资讯与美食照片请关注Instagram",
+    "follow": "关注"
+  },
+  "store": {
+    "eyebrow": "Store",
+    "title": "店铺信息",
+    "address": "地址",
+    "addressVal": "〒479-0822 爱知县常滑市临空町2-20-3\n永旺购物中心常滑",
+    "hours": "营业时间",
+    "hoursVal": "11:00 〜 21:00",
+    "holiday": "休息日",
+    "holidayVal": "不定期休息（随永旺商场）",
+    "access": "交通",
+    "accessVal": "从中部国际机场站步行约10分钟",
+    "mapCta": "在Google Maps中查看",
+    "mapPlaceholder": "请设置Google Maps嵌入API密钥以显示地图"
+  },
+  "qr": {
+    "eyebrow": "QR Code",
+    "title": "多语言菜单二维码",
+    "subtitle": "扫码直接访问您语言的菜单页面。",
+    "note": "※请将QR图片放置在 /public/qr/ 文件夹中"
+  },
+  "menu": {
+    "title": "菜单",
+    "subtitle": "自制生意面 · 披萨 · 油炸披萨",
+    "note": "所有价格均含税。图片仅供参考。",
+    "takeoutNote": "外带需另收容器费¥40（含税）。仅标有TAKE OUT OK的商品可外带。",
+    "categories": {
+      "all": "全部",
+      "pasta": "意面",
+      "pizza": "披萨",
+      "fritta": "油炸披萨",
+      "set": "套餐",
+      "drink": "饮料"
+    },
+    "noodle": "面条选项",
+    "noodleExtra": "面条稍多免费 / 双倍面条 +¥150（含税）",
+    "topping": "追加配料",
+    "toppingNote": "可加入意面·披萨",
+    "eatIn": "堂食",
+    "takeout": "外带",
+    "frittaSet": "油炸披萨组合（外带专用）",
+    "pieceSet": "个套餐",
+    "frittaPackaging": "※外带包装费：每件¥10。",
+    "noItems": "该分类暂无商品。",
+    "taxIncl": "含税",
+    "takeoutPrice": "外带"
+  },
+  "card": {
+    "takeoutOk": "TAKE OUT OK",
+    "taxIncl": "（含税）",
+    "eatIn": "堂食",
+    "toPrice": "外带"
+  },
+  "footer": {
+    "storeName": "永旺购物中心常滑店",
+    "storeInfo": "店铺信息",
+    "hours": "11:00〜21:00",
+    "holiday": "不定期休息（随永旺商场）",
+    "copyright": "© {year} Parmenara Aeon Mall Tokoname. All rights reserved."
+  },
+  "meta": {
+    "siteTitle": "帕尔梅纳拉 永旺购物中心常滑店",
+    "siteDescription": "查看帕尔梅纳拉永旺购物中心常滑店的完整菜单。",
+    "menuTitle": "菜单 | 帕尔梅纳拉 永旺购物中心常滑店",
+    "menuDescription": "查看帕尔梅纳拉永旺购物中心常滑店的完整菜单。"
+  }
+}
