@@ -22,32 +22,32 @@ export default function LangLayoutIntl({
     <>
       {/* ── グローバルナビ ── */}
       <nav className="sticky top-0 z-50 bg-white border-b border-stone-200 shadow-sm">
-        <div className="max-w-6xl mx-auto px-4 flex items-center justify-between h-14">
-          <Link href="/" className="flex items-center gap-2">
-            <span className="text-xl font-extrabold tracking-tight text-stone-800">
+        <div className="max-w-6xl mx-auto px-3 sm:px-4 flex items-center justify-between h-14 gap-2">
+          <Link href="/" className="flex items-center gap-1.5 flex-shrink-0">
+            <span className="text-base sm:text-xl font-extrabold tracking-tight text-stone-800 whitespace-nowrap">
               PARMENARA
             </span>
-            <span className="hidden sm:block text-xs text-stone-400 font-medium">
+            <span className="hidden md:block text-xs text-stone-400 font-medium whitespace-nowrap">
               Aeon Mall Tokoname
             </span>
           </Link>
 
-          <ul className="flex items-center gap-1 text-sm font-medium text-stone-600">
+          <ul className="flex items-center gap-0.5 sm:gap-1 text-xs sm:text-sm font-medium text-stone-600 flex-shrink-0">
             <li>
-              <Link href="/" className="px-3 py-2 rounded hover:text-red-600 transition-colors">
+              <Link href="/" className="px-1.5 sm:px-3 py-2 rounded hover:text-red-600 transition-colors whitespace-nowrap">
                 {t("home")}
               </Link>
             </li>
             <li>
               <Link
                 href="/menu"
-                className="px-3 py-2 rounded bg-red-600 text-white hover:bg-red-700 transition-colors"
+                className="px-1.5 sm:px-3 py-2 rounded bg-red-600 text-white hover:bg-red-700 transition-colors whitespace-nowrap"
               >
                 {t("menu")}
               </Link>
             </li>
             <li>
-              <Link href="/#store" className="px-3 py-2 rounded hover:text-red-600 transition-colors">
+              <Link href="/#store" className="px-1.5 sm:px-3 py-2 rounded hover:text-red-600 transition-colors whitespace-nowrap">
                 {t("store")}
               </Link>
             </li>
@@ -56,7 +56,7 @@ export default function LangLayoutIntl({
                 href="https://www.instagram.com/parmenara_tokoname/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-3 py-2 rounded hover:text-red-600 transition-colors"
+                className="px-1.5 sm:px-3 py-2 rounded hover:text-red-600 transition-colors whitespace-nowrap"
               >
                 {t("instagram")}
               </a>
