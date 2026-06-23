@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   title: "パルメナーラ イオンモール常滑店",
   description: "自家製生パスタ・ピッツァ・フリッタのイタリアンレストラン。愛知県常滑市イオンモール常滑内。",
   icons: { icon: "/favicon.ico" },
+  verification: {
+    google: "-QOXV_EwVoWSz3koQhmE0TCOzDlr6DmFtqh9IlRkBME",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
