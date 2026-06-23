@@ -13,13 +13,7 @@ import { MenuItem, Category, Badge } from "@/data/menuItems";
 const SERVICE_DOMAIN = process.env.MICROCMS_SERVICE_DOMAIN ?? "";
 const API_KEY        = process.env.MICROCMS_API_KEY ?? "";
 
-if (!SERVICE_DOMAIN || !API_KEY) {
-  if (process.env.NODE_ENV === "production") {
-    throw new Error(
-      "MICROCMS_SERVICE_DOMAIN と MICROCMS_API_KEY を環境変数に設定してください。"
-    );
-  }
-}
+// CMS未設定の場合は静的データにフォールバックするため、ここでは例外を投げない
 
 const BASE_URL = `https://${SERVICE_DOMAIN}.microcms.io/api/v1`;
 

@@ -33,9 +33,10 @@ const META: Record<Lang, { title: string; description: string }> = {
 export async function generateMetadata({
   params,
 }: {
-  params: { lang: string };
+  params: Promise<{ lang: string }>;
 }): Promise<Metadata> {
-  const lang = (VALID_LANGS.includes(params.lang as Lang) ? params.lang : "ja") as Lang;
+  const { lang: langParam } = await params;
+  const lang = (VALID_LANGS.includes(langParam as Lang) ? langParam : "ja") as Lang;
   return {
     title: META[lang].title,
     description: META[lang].description,
