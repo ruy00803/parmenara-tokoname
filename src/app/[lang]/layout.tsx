@@ -1,3 +1,5 @@
+import Document from "@/components/layout/Document";
+export { metadata } from "@/components/layout/Document";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { locales, type Locale } from "@/i18n/request";
@@ -19,10 +21,12 @@ export default async function LangLayout({
   const messages = await getMessages({ locale });
 
   return (
+    <Document locale={locale}>
     <NextIntlClientProvider locale={locale} messages={messages}>
       <LangLayoutIntl lang={locale}>
         {children}
       </LangLayoutIntl>
     </NextIntlClientProvider>
+    </Document>
   );
 }

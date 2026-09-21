@@ -5,7 +5,9 @@
 | 更新内容 | ファイル・設定先 |
 |---|---|
 | 静的メニュー・価格・商品名・説明 | `src/data/menuItems.ts` |
-| トップページの店舗情報・紹介文 | `src/app/[lang]/page.tsx` |
+| 住所・営業時間・電話番号（トップ／フッター共通） | `src/data/storeInfo.ts` |
+| 商品バッジの4言語表記 | `src/data/badgeLabels.ts` |
+| トップページの紹介文・アクセス | `src/app/[lang]/page.tsx` |
 | メニューページの見出し・注意書き | `src/app/[lang]/menu/page.tsx` |
 | カテゴリ・トッピング表示の翻訳 | `src/components/menu/MenuGridClient.tsx` |
 | 商品カードの表示 | `src/components/menu/MenuCard.tsx` |
@@ -31,6 +33,7 @@
 ## 動作確認
 
 ```bash
+npm run lint
 npm run type-check
 npm run build
 ```

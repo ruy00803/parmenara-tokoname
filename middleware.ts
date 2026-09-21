@@ -12,5 +12,5 @@ export default createMiddleware({
 
 export const config = {
   // /_next/ や /api/ などは除外
-  matcher: ["/((?!api|_next/static|_next/image|favicon.ico|images|qr).*)"],
+  matcher: ["/((?!api|_next/static|_next/image|favicon.ico|icon.svg|sitemap.xml|robots.txt|images|qr).*)"],
 };
