@@ -205,7 +205,7 @@ export default function MenuGridClient({ items, lang = "ja" }: MenuGridClientPro
                 <span className="text-2xl font-extrabold text-orange-600">{count}</span>
                 <span className="text-xs text-stone-500">{t.count}</span>
                 <span className="text-lg font-bold text-stone-800 mt-1">¥{price.toLocaleString()}</span>
-                <span className="text-[10px] text-stone-400">{lang === "ja" ? "税込" : "tax incl."}</span>
+                <span className="text-[10px] text-stone-400">{lang === "ja" ? "税込" : lang === "ko" ? "세금포함" : lang === "zh" ? "含税" : "tax incl."}</span>
               </div>
             ))}
           </div>

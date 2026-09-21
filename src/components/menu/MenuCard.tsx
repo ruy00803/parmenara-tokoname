@@ -1,5 +1,6 @@
 "use client";
 
+import { badgeLabels } from "@/data/badgeLabels";
 import Image from "next/image";
 import { MenuItem } from "@/data/menuItems";
 
@@ -82,10 +83,10 @@ export default function MenuCard({ item, lang = "ja" }: MenuCardProps) {
           <div className="flex flex-wrap gap-1">
             {visibleBadges.map((badge) => (
               <span
-                key={badge}
+                key={badgeLabels[badge][lang]}
                 className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${BADGE_STYLES[badge] ?? "bg-stone-200 text-stone-700"}`}
               >
-                {badge}
+                {badgeLabels[badge][lang]}
               </span>
             ))}
           </div>

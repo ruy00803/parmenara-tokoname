@@ -1,5 +1,8 @@
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 import Image from "next/image";
+import { storeInfo } from "@/data/storeInfo";
 import { menuItems } from "@/data/menuItems";
 
 type Lang = "ja" | "en" | "ko" | "zh";
@@ -7,6 +10,17 @@ const VALID_LANGS: Lang[] = ["ja", "en", "ko", "zh"];
 
 export function generateStaticParams() {
   return VALID_LANGS.map((lang) => ({ lang }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  const locale = VALID_LANGS.includes(lang as Lang) ? lang : "ja";
+  const t = await getTranslations({ locale, namespace: "meta" });
+  return {
+    title: t("siteTitle"),
+    description: t("siteDescription"),
+    alternates: { languages: { ja: "/ja", en: "/en", ko: "/ko", zh: "/zh" } },
+  };
 }
 
 const T: Record<Lang, {
@@ -27,10 +41,10 @@ const T: Record<Lang, {
     conceptTitle: "パルメナーラのこだわり", conceptBody: "毎日仕込む自家製生パスタは、もちもちとした食感が自慢。ピッツァは独自のブレンド生地で、外はカリッ、中はふわっと焼き上げています。イタリア産完熟トマトを贅沢に使ったソースは、素材の旨味を最大限に引き出しています。",
     frittaTitle: "新感覚！揚げピッツァフリッタ", frittaBody: "カリッと揚がった新食感のピッツァフリッタ。お持ち帰り・食べ歩きもできます。梅ササミ・照りたま・じゃが明太・アップル（新登場）の4種類。", frittaCta: "フリッタを見る",
     storeTitle: "店舗情報",
-    address: "住所", addressVal: "〒479-0882 愛知県常滑市りんくう町２丁目２０番３\nイオンモール常滑 ２階 フードコート内",
-    hours: "営業時間", hoursVal: "10:00〜21:00",
+    address: "住所", addressVal: storeInfo.ja.addressVal,
+    hours: "営業時間", hoursVal: storeInfo.ja.hoursVal,
     holiday: "定休日", holidayVal: "不定休（イオンモールに準ずる）",
-    tel: "電話番号", telVal: "0569-89-7317",
+    tel: "電話番号", telVal: storeInfo.ja.telVal,
     access: "アクセス", accessVal: "りんくう常滑駅より徒歩約5分",
     mapCta: "Google Mapで見る",
     instaTitle: "Instagram", instaSub: "最新情報・フードフォトはInstagramでチェック", instaFollow: "フォローする",
@@ -42,10 +56,10 @@ const T: Record<Lang, {
     conceptTitle: "Our Commitment", conceptBody: "Our fresh pasta is made in-house daily for a wonderfully chewy texture. The pizza dough is our proprietary blend — crispy on the outside, fluffy inside. We use premium Italian ripened tomatoes to bring out the best flavors.",
     frittaTitle: "New! Fried Pizza Fritta", frittaBody: "A brand-new crispy fried pizza experience. Great for takeout and eating on the go. Four flavors: Ume Chicken, Teriyaki Egg, Potato Mentaiko & Apple (new!).", frittaCta: "See Fritta Menu",
     storeTitle: "Store Information",
-    address: "Address", addressVal: "2-20-3 Rinku-cho, Tokoname, Aichi 479-0882\nAeon Mall Tokoname 2F Food Court",
-    hours: "Hours", hoursVal: "10:00 AM – 9:00 PM",
+    address: "Address", addressVal: storeInfo.en.addressVal,
+    hours: "Hours", hoursVal: storeInfo.en.hoursVal,
     holiday: "Closed", holidayVal: "Irregular (follows Aeon Mall schedule)",
-    tel: "Phone", telVal: "0569-89-7317",
+    tel: "Phone", telVal: storeInfo.en.telVal,
     access: "Access", accessVal: "Approx. 5 min walk from Rinku-Tokoname Station.",
     mapCta: "Open in Google Maps",
     instaTitle: "Instagram", instaSub: "Follow us for the latest news and food photos", instaFollow: "Follow",
@@ -57,10 +71,10 @@ const T: Record<Lang, {
     conceptTitle: "파르메나라의 고집", conceptBody: "매일 담아내는 수제 생파스타는 쫄깃한 식감이 자랑입니다. 피자는 독자 블렌드 도우로 겉은 바삭, 속은 폭신하게 구워냅니다. 이탈리아산 완숙 토마토를 듬뿍 사용한 소스로 재료의 맛을 최대한 끌어냈습니다.",
     frittaTitle: "새로운 식감! 튀김 피자 프리타", frittaBody: "바삭하게 튀긴 새로운 식감의 피자 프리타. 포장 및 길거리 취식도 가능합니다. 매실 닭가슴살·데리타마·감자 명란·애플(신메뉴) 4종류.", frittaCta: "프리타 메뉴 보기",
     storeTitle: "매장 정보",
-    address: "주소", addressVal: "〒479-0882 아이치현 도코나메시 린쿠초 2-20-3\n이온몰 도코나메 2층 푸드코트",
-    hours: "영업시간", hoursVal: "10:00〜21:00",
+    address: "주소", addressVal: storeInfo.ko.addressVal,
+    hours: "영업시간", hoursVal: storeInfo.ko.hoursVal,
     holiday: "정기 휴무", holidayVal: "부정기 휴무（이온몰 기준）",
-    tel: "전화번호", telVal: "0569-89-7317",
+    tel: "전화번호", telVal: storeInfo.ko.telVal,
     access: "오시는 길", accessVal: "린쿠토코나메역에서 도보 약 5분",
     mapCta: "Google Map으로 보기",
     instaTitle: "Instagram", instaSub: "최신 소식과 푸드 사진은 인스타그램에서 확인", instaFollow: "팔로우하기",
@@ -72,10 +86,10 @@ const T: Record<Lang, {
     conceptTitle: "帕尔梅纳拉的坚持", conceptBody: "每日现制的手工生意面，口感劲道是我们的骄傲。披萨采用独家混合面团，外酥里嫩。使用大量意大利熟番茄制成的酱汁，将食材的鲜味发挥到极致。",
     frittaTitle: "全新体验！油炸披萨", frittaBody: "酥脆油炸披萨带来全新口感体验。可外带、边走边吃。梅子鸡胸肉、照烧鸡蛋、土豆明太子、苹果（新品）共4种。", frittaCta: "查看油炸披萨菜单",
     storeTitle: "店铺信息",
-    address: "地址", addressVal: "〒479-0882 爱知县常滑市临空町2-20-3\n永旺购物中心常滑 2楼美食广场",
-    hours: "营业时间", hoursVal: "10:00〜21:00",
+    address: "地址", addressVal: storeInfo.zh.addressVal,
+    hours: "营业时间", hoursVal: storeInfo.zh.hoursVal,
     holiday: "休息日", holidayVal: "不定期休息（随永旺商场）",
-    tel: "电话", telVal: "0569-89-7317",
+    tel: "电话", telVal: storeInfo.zh.telVal,
     access: "交通", accessVal: "从临空常滑站步行约5分钟",
     mapCta: "在Google Maps中查看",
     instaTitle: "Instagram", instaSub: "最新资讯与美食照片请关注Instagram", instaFollow: "关注",
@@ -89,7 +103,7 @@ export default async function TopPage({ params }: { params: Promise<{ lang: stri
   const { lang: langParam } = await params;
   const lang = (VALID_LANGS.includes(langParam as Lang) ? langParam : "ja") as Lang;
   const t = T[lang];
-  const featured = FEATURED_IDS.map((id) => menuItems.find((m) => m.id === id)).filter(Boolean);
+  const featured = FEATURED_IDS.map((id) => menuItems.find((m) => m.id === id && m.available)).filter(Boolean);
   const getName = (item: typeof menuItems[0]) => {
     switch (lang) { case "en": return item.nameEn; case "ko": return item.nameKo; case "zh": return item.nameZh; default: return item.name; }
   };

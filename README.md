@@ -36,7 +36,7 @@
 
 ## ローカルで起動する
 
-Node.jsとnpmを用意し、以下を実行します。
+Node.js 22.13.0以上とnpmを用意し、以下を実行します。
 
 ```bash
 git clone https://github.com/ruy00803/parmenara-tokoname.git
@@ -56,7 +56,7 @@ npm run dev
 | `npm run build` | 本番ビルド |
 | `npm run start` | 本番ビルド後のサーバー起動 |
 
-`npm run lint` はスクリプトのみ定義されており、ESLintの依存関係・設定は未整備です。
+`npm run lint` でESLintによる検査を実行します（警告もエラーとして扱います）。
 
 ## ページ構成
 
@@ -86,7 +86,7 @@ parmenara-tokoname/
 
 - 常滑店限定イベント・お知らせの表示
 - ページ内に分散している翻訳テキストの管理方法の統一
-- Lint設定の整備と継続的な検証
+- 継続的な検証の自動化
 
 ## 利用について
 

@@ -1,13 +1,8 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { locales, type Locale } from "@/i18n/request";
-
-const LANG_LABELS: Record<Locale, string> = {
-  ja: "日本語",
-  en: "English",
-  ko: "한국어",
-  zh: "简体中文",
-};
+import LanguageSwitcher from "./LanguageSwitcher";
+import { storeInfo } from "@/data/storeInfo";
+import { type Locale } from "@/i18n/request";
 
 export default function LangLayoutIntl({
   children,
@@ -66,22 +61,7 @@ export default function LangLayoutIntl({
 
         {/* 言語切替バー */}
         <div className="bg-stone-800">
-          <div className="max-w-6xl mx-auto px-4 flex gap-0 text-xs">
-            {locales.map((l) => (
-              <Link
-                key={l}
-                href="/"
-                locale={l}
-                className={`px-4 py-2 font-medium transition-colors ${
-                  l === lang
-                    ? "bg-red-600 text-white"
-                    : "text-stone-400 hover:text-white hover:bg-stone-700"
-                }`}
-              >
-                {LANG_LABELS[l]}
-              </Link>
-            ))}
-          </div>
+          <LanguageSwitcher lang={lang} />
         </div>
       </nav>
 
@@ -95,6 +75,7 @@ export default function LangLayoutIntl({
 
 function LangFooter({ lang }: { lang: Locale }) {
   const t = useTranslations("footer");
+  const store = storeInfo[lang];
   const year = new Date().getFullYear();
 
   return (
@@ -107,10 +88,9 @@ function LangFooter({ lang }: { lang: Locale }) {
         <div>
           <p className="text-white font-semibold mb-2">{t("storeInfo")}</p>
           <ul className="space-y-1 text-xs text-stone-400">
-            <li>〒479-0882 愛知県常滑市りんくう町2-20-3</li>
-            <li>イオンモール常滑 2F フードコート内</li>
-            <li>10:00〜21:00</li>
-            <li>TEL: 0569-89-7317</li>
+            <li className="whitespace-pre-line">{store.addressVal}</li>
+            <li>{store.hoursVal}</li>
+            <li><a href={`tel:${store.telVal}`}>TEL: {store.telVal}</a></li>
           </ul>
         </div>
         <div>

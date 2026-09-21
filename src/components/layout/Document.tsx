@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
-import "./globals.css";
+import "@/app/globals.css";
 
 const notoSansJP = Noto_Sans_JP({
   subsets: ["latin"],
@@ -12,15 +12,16 @@ const notoSansJP = Noto_Sans_JP({
 export const metadata: Metadata = {
   title: "パルメナーラ イオンモール常滑店",
   description: "自家製生パスタ・ピッツァ・フリッタのイタリアンレストラン。愛知県常滑市イオンモール常滑内。",
-  icons: { icon: "/favicon.ico" },
+  metadataBase: new URL("https://parmenara-tokoname.vercel.app"),
+  icons: { icon: "/icon.svg" },
   verification: {
     google: "-QOXV_EwVoWSz3koQhmE0TCOzDlr6DmFtqh9IlRkBME",
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function Document({ children, locale }: { children: React.ReactNode; locale: string }) {
   return (
-    <html lang="ja">
+    <html lang={locale}>
       <body className={`${notoSansJP.variable} font-sans antialiased bg-[#faf8f5]`}>
         {children}
       </body>
