@@ -1,25 +1,64 @@
-# パルメナーラ イオンモール常滑店 公式サイト
+# parmenara-tokoname
 
-**Parmenara Aeon Mall Tokoname** の公式ホームページ。  
-自家製生パスタ・ピッツァ・フリッタの4言語対応レストランサイトです。
+パルメナーラ イオンモール常滑店向けに制作した、日本語・英語・韓国語・中国語（簡体字）の4言語対応店舗Webサイトです。
 
----
+店舗情報やメニューを外国人来店客にも分かりやすく届け、実店舗の情報発信を効率化することを目的に制作しました。
 
-## 技術スタック
+[Webサイト](https://parmenara-tokoname.vercel.app) · [更新・運用ガイド](docs/maintenance.md)
 
-| 項目 | 技術 |
+## 制作背景
+
+マリノ系のサイトを参考に、店舗情報・メニュー・イベント情報を届ける構成を計画しました。特に、常滑店限定イベントを随時掲載できることと、海外からの来店客が自分の言語で店舗情報を確認できることを重視しています。
+
+現在は4言語の店舗紹介・メニュー表示を実装しています。店舗情報やメニューはコード内で管理し、ファイルを編集して更新する構成です。店舗限定イベントの画面表示は未実装です。
+
+## 主な機能と実装状況
+
+| 機能 | 現在の状態 |
 |---|---|
-| フレームワーク | Next.js 15 (App Router) |
-| 言語 | TypeScript |
-| スタイリング | Tailwind CSS |
-| 多言語対応 | next-intl |
-| CMS | microCMS（フォールバック：静的データ） |
+| 4言語対応 | 日本語・英語・韓国語・中国語（簡体字）のトップ／メニューページ、言語切替 |
+| 店舗紹介 | 店舗情報、営業時間、アクセス、Instagram・地図へのリンク |
+| メニュー表示 | カテゴリ切替、商品画像・説明・価格、テイクアウト情報、トッピング |
+| レスポンシブ表示 | スマートフォン・PC向けのレイアウト |
+
+トップページの人気メニューとメニューページは、`src/data/menuItems.ts` の静的データを参照しています。
+
+## 技術構成
+
+| 用途 | 技術 |
+|---|---|
+| フレームワーク | Next.js 15 / App Router |
+| UI・言語 | React 18 / TypeScript |
+| スタイリング | Tailwind CSS 3 |
+| 多言語ルーティング | next-intl 3 |
+| コンテンツ管理 | TypeScriptファイル内の静的データ |
 | ホスティング | Vercel |
-| リポジトリ | GitHub |
 
----
+## ローカルで起動する
 
-## 対応言語・URL
+Node.jsとnpmを用意し、以下を実行します。
+
+```bash
+git clone https://github.com/ruy00803/parmenara-tokoname.git
+cd parmenara-tokoname
+npm ci
+npm run dev
+```
+
+ブラウザで [日本語トップ](http://localhost:3000/ja) を開きます。環境変数の設定は不要です。
+
+### 開発用コマンド
+
+| コマンド | 用途 |
+|---|---|
+| `npm run dev` | 開発サーバー起動 |
+| `npm run type-check` | TypeScriptの型チェック |
+| `npm run build` | 本番ビルド |
+| `npm run start` | 本番ビルド後のサーバー起動 |
+
+`npm run lint` はスクリプトのみ定義されており、ESLintの依存関係・設定は未整備です。
+
+## ページ構成
 
 | 言語 | トップ | メニュー |
 |---|---|---|
@@ -28,297 +67,27 @@
 | 한국어 | `/ko` | `/ko/menu` |
 | 简体中文 | `/zh` | `/zh/menu` |
 
----
-
 ## ディレクトリ構成
 
-```
-parmenara/
-├── messages/               # 多言語テキスト
-│   ├── ja.json
-│   ├── en.json
-│   ├── ko.json
-│   └── zh.json
-├── public/
-│   ├── images/
-│   │   ├── menu/           # 商品画像（英語スラグ）
-│   │   ├── store/          # 店舗写真
-│   │   └── events/         # イベント画像
-│   └── qr/                 # 多言語メニューQRコード
-│       ├── qr-ja.png
-│       ├── qr-en.png
-│       ├── qr-ko.png
-│       └── qr-zh.png
+```text
+parmenara-tokoname/
+├── docs/maintenance.md      # 更新・運用ガイド
+├── messages/                # next-intl用の4言語メッセージ
+├── public/images/           # 店舗写真・商品画像
 ├── src/
-│   ├── app/
-│   │   ├── layout.tsx      # ルートレイアウト
-│   │   ├── page.tsx        # / → /ja リダイレクト
-│   │   └── [lang]/
-│   │       ├── layout.tsx  # 言語別レイアウト（ナビ・フッター）
-│   │       ├── page.tsx    # トップページ
-│   │       └── menu/
-│   │           └── page.tsx # メニューページ
-│   ├── components/
-│   │   ├── layout/
-│   │   │   └── LangLayoutIntl.tsx
-│   │   └── menu/
-│   │       ├── MenuCard.tsx
-│   │       ├── MenuGrid.tsx
-│   │       ├── MenuGridClient.tsx
-│   │       └── MenuGridServer.tsx
-│   ├── data/
-│   │   └── menuItems.ts    # 静的メニューデータ（CMSフォールバック）
-│   ├── i18n/
-│   │   ├── request.ts
-│   │   └── navigation.ts
-│   ├── lib/
-│   │   └── microcms.ts     # CMS連携
-│   └── types/
-│       └── microcms.ts     # CMS型定義
-├── docs/
-│   └── microcms-schema.md  # CMSスキーマ設計書
-├── middleware.ts            # next-intl ルーティング
-├── next.config.ts
-├── .env.example
-├── .env.local              # ← GitHubにpushしない（.gitignore済み）
-└── .gitignore
+│   ├── app/[lang]/          # 言語別のトップ・メニューページ
+│   ├── components/          # レイアウト・メニュー表示
+│   ├── data/menuItems.ts    # 静的メニュー・トッピングなど
+│   └── i18n/               # 言語設定・ナビゲーション
+└── middleware.ts           # 多言語ルーティング
 ```
 
----
+## 今後の改善
 
-## セットアップ手順
+- 常滑店限定イベント・お知らせの表示
+- ページ内に分散している翻訳テキストの管理方法の統一
+- Lint設定の整備と継続的な検証
 
-### 1. リポジトリをクローン
-
-```bash
-git clone https://github.com/YOUR_USERNAME/parmenara-tokoname.git
-cd parmenara-tokoname
-```
-
-### 2. 依存パッケージをインストール
-
-```bash
-npm install
-# または
-yarn install
-```
-
-必要なパッケージ一覧：
-
-```bash
-npm install next react react-dom typescript
-npm install next-intl
-npm install tailwindcss postcss autoprefixer
-npm install @types/node @types/react @types/react-dom
-```
-
-### 3. 環境変数を設定
-
-`.env.example` をコピーして `.env.local` を作成：
-
-```bash
-cp .env.example .env.local
-```
-
-`.env.local` を編集：
-
-```env
-MICROCMS_SERVICE_DOMAIN=your-service-domain
-MICROCMS_API_KEY=your-api-key
-```
-
-> **注意：** microCMS未設定でも静的データでサイトは動作します。
-
-### 4. 開発サーバーを起動
-
-```bash
-npm run dev
-```
-
-ブラウザで http://localhost:3000 を開く（自動的に `/ja` へリダイレクト）。
-
----
-
-## 商品画像の配置方法
-
-`public/images/menu/` に以下のファイル名で画像を配置してください。
-
-### 画像ファイル名一覧（英語スラグ）
-
-#### パスタ
-| 元ファイル名 | 配置ファイル名 |
-|---|---|
-| トマトモッツァ.png | `tomato-mozzarella.png` |
-| こぼれベーコン.png | `kobore-bacon-parmenara.png` |
-| ツナとキノコ.png | `tuna-mushroom-mentaiko.png` |
-| 定番ベーコン.png | `bacon-mushroom-parmenara.png` |
-| トマトなーら.png | `creamy-tomato-nara.png` |
-| にんにくトマト.png | `spicy-garlic-tomato.png` |
-| しらすねぎ.png | `shirasu-peperoncino.png` |
-| エビとイカ.png | `ebi-ika-peperoncino.png` |
-
-#### ピッツァ
-| 元ファイル名 | 配置ファイル名 |
-|---|---|
-| ハーフ_ハーフ.png | `half-and-half-pizza.png` |
-| マルゲリータ.png | `italian-tomato-margherita.png` |
-| きのこピザ.png | `three-mushroom-cream-pizza.png` |
-| ソーセージベーコン.png | `sausage-bacon-pizza.png` |
-| コーンのクリームピッツァ.png | `corn-cream-pizza.png` |
-| 白雪はちみつ.png | `shirayuki-honey.png` |
-
-#### フリッタ
-| 元ファイル名 | 配置ファイル名 |
-|---|---|
-| 梅ささみ.PNG | `ume-sasami-fritta.png` |
-| アップル.PNG | `apple-fritta.png` |
-| てりたま.PNG | `teriyaki-egg-fritta.png` |
-| シャカイモ.PNG | `jaga-mentai-fritta.png` ※フリッタ.jpg代用 |
-
-#### セット
-| 元ファイル名 | 配置ファイル名 |
-|---|---|
-| ポテトセット.png | `potato-set.png` |
-| サラダセット.png | `salad-set.png` |
-| バケットセット.png | `baguette-tower-set.png` |
-| キッズセット.png | `kids-set.png` |
-
-> ドリンク（`drink-placeholder.png`）は後から差し替えてください。
-
----
-
-## QRコードの生成・配置
-
-各言語メニューページへのQRコードを生成し、`public/qr/` に配置してください。
-
-| ファイル名 | URL |
-|---|---|
-| `qr-ja.png` | `https://your-domain.com/ja/menu` |
-| `qr-en.png` | `https://your-domain.com/en/menu` |
-| `qr-ko.png` | `https://your-domain.com/ko/menu` |
-| `qr-zh.png` | `https://your-domain.com/zh/menu` |
-
-**QRコード生成ツール（無料）：**
-- [QR Code Generator](https://www.qr-code-generator.com/)
-- [goqr.me](https://goqr.me/)
-
----
-
-## GitHubへのpush手順
-
-### 初回
-
-```bash
-# リポジトリを初期化（新規の場合）
-git init
-git add .
-git commit -m "initial commit"
-
-# GitHubにリポジトリを作成後
-git remote add origin https://github.com/YOUR_USERNAME/parmenara-tokoname.git
-git branch -M main
-git push -u origin main
-```
-
-### 2回目以降
-
-```bash
-git add .
-git commit -m "更新内容を記載"
-git push origin main
-```
-
-> **⚠️ 必ず確認：** `.env.local` がpushされていないことを確認してください。
-
----
-
-## Vercelへのデプロイ手順
-
-### 1. Vercelアカウント作成・ログイン
-
-https://vercel.com にアクセスし、GitHubアカウントでログイン。
-
-### 2. プロジェクトをインポート
-
-1. Vercelダッシュボードで「Add New → Project」
-2. GitHubリポジトリ `parmenara-tokoname` を選択
-3. 「Import」をクリック
-
-### 3. 環境変数を設定
-
-「Environment Variables」セクションで以下を追加：
-
-| Name | Value |
-|---|---|
-| `MICROCMS_SERVICE_DOMAIN` | your-service-domain |
-| `MICROCMS_API_KEY` | your-api-key |
-
-> microCMS未設定の場合は追加不要（静的データで動作）。
-
-### 4. デプロイ
-
-「Deploy」ボタンをクリック。  
-数分後に `https://parmenara-tokoname.vercel.app` で公開されます。
-
-### 5. カスタムドメインの設定（任意）
-
-Vercelダッシュボード → Settings → Domains で独自ドメインを設定できます。
-
----
-
-## mainブランチへのpushで自動デプロイ
-
-GitHubの `main` ブランチにpushすると、Vercelが自動的にビルド・デプロイを実行します。
-
-```bash
-git push origin main  # → Vercelが自動デプロイ
-```
-
----
-
-## microCMS連携手順
-
-詳細は `docs/microcms-schema.md` を参照してください。
-
-### 簡易手順
-
-1. [microCMS](https://microcms.io/) にアカウントを作成
-2. 新しいサービスを作成
-3. `docs/microcms-schema.md` のスキーマ通りにAPIを作成：
-   - `menu`（リスト形式）
-   - `store`（オブジェクト形式）
-   - `events`（リスト形式）
-   - `notices`（リスト形式）
-4. APIキーを取得し `.env.local` に設定
-5. Vercelの環境変数にも同じ値を設定
-6. 初期データを `src/data/menuItems.ts` を参考に入力
-
----
-
-## CMSで更新できる項目
-
-| 項目 | 更新方法 |
-|---|---|
-| 商品名・価格・説明（4言語） | microCMS `menu` API |
-| 商品画像 | microCMS `menu` API の画像フィールド |
-| テイクアウト可否 | microCMS `menu` API |
-| バッジ（人気NO.1 / 名物 / 定番） | microCMS `menu` API |
-| 販売中 / 販売停止 | microCMS `menu` API の `available` フィールド |
-| 営業時間・店舗情報 | microCMS `store` API |
-| 期間限定・イベント情報 | microCMS `events` API |
-| お知らせ | microCMS `notices` API |
-
----
-
-## 注意事項
-
-- `.env.local` は絶対にGitHubにpushしないでください
-- 日本語ファイル名の画像は英語スラグにリネームしてから `public/images/menu/` に配置してください
-- `じゃが明太` の個別画像がない場合は `フリッタ.jpg`（全体メニュー画像）を `jaga-mentai-fritta.png` としてコピーして使用してください
-- ドリンクは画像なし（テキストのみ）での掲載です。後から画像を追加する場合は `drink-placeholder.png` を差し替えてください
-
----
-
-## ライセンス
+## 利用について
 
 このリポジトリはパルメナーラ イオンモール常滑店の内部利用を目的としています。
